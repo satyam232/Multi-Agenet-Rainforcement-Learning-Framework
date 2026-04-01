@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{lmodern}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=20cm,
+			height=14cm,
+			tick label style={font=\fontsize{24}{28}\selectfont},
+			label style={font=\fontsize{24}{28}\selectfont},
+			title style={font=\fontsize{24}{28}\selectfont},
+			xlabel={No. of Agents},
+			ylabel={Success Rate (\%)},
+			title={Success vs Agents},
+			xmin=1, xmax=10,
+			ymin=75, ymax=100,
+			xtick={1,2,3,4,5,6,7,8,9,10},
+			ytick={75,80,85,90,95,100},
+			grid=both,
+			grid style={dotted, gray!40},
+		]
+			
+			\addplot+[mark=*, color=blue, line width=2pt, mark size=2.5pt] coordinates {
+				(1,100)(2,97.5)(3,95)(4,92.5)(5,90)(6,87.5)(7,85)(8,82.5)(9,80)(10,77.5)
+			};
+			
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{lmodern}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=20cm,
+			height=14cm,
+			tick label style={font=\fontsize{24}{28}\selectfont},
+			label style={font=\fontsize{24}{28}\selectfont},
+			title style={font=\fontsize{24}{28}\selectfont},
+			xlabel={No. of Agents},
+			ylabel={Throughput (tasks/sec)},
+			title={Throughput vs Agents},
+			xmin=1, xmax=10,
+			ymin=5, ymax=10.5,
+			xtick={1,2,3,4,5,6,7,8,9,10},
+			ytick={5,6,7,8,9,10},
+			grid=both,
+			grid style={dotted, gray!40},
+		]
+			
+			\addplot+[mark=*, color=blue, line width=2pt, mark size=2.5pt] coordinates {
+				(1,10.00)(2,9.09)(3,8.33)(4,7.69)(5,7.14)(6,6.67)(7,6.25)(8,5.88)(9,5.56)(10,5.26)
+			};
+			
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

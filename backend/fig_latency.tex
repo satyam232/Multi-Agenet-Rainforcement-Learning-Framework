@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{lmodern}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=20cm,
+			height=14cm,
+			ybar,
+			bar width=28pt,
+			tick label style={font=\fontsize{24}{28}\selectfont},
+			label style={font=\fontsize{24}{28}\selectfont},
+			title style={font=\fontsize{24}{28}\selectfont},
+			xlabel={Method},
+			ylabel={Latency (ms)},
+			title={Decision Latency Comparison},
+			ymin=0, ymax=200,
+			ytick={0,50,100,150,200},
+			symbolic x coords={Proposed,B1,B2,B3,B4,B5},
+			xtick=data,
+			x tick label style={rotate=45, anchor=east,
+				font=\fontsize{20}{24}\selectfont},
+			grid=both,
+			grid style={dotted, gray!40},
+			nodes near coords,
+			every node near coord/.append style={
+				font=\fontsize{18}{22}\selectfont
+			},
+			legend style={font=\fontsize{20}{24}\selectfont},
+		]
+			
+			\addplot[fill=blue!70, draw=blue!80!black] coordinates {
+				(Proposed,120) (B1,150) (B2,160) (B3,170) (B4,160) (B5,150)
+			};
+			
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

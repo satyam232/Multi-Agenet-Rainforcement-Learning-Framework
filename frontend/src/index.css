@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Root Variables ─────────────────────────────────────────────── */
+:root {
+  --neon-blue: #00d4ff;
+  --neon-green: #00ff88;
+  --neon-purple: #a855f7;
+  --neon-pink: #f43f5e;
+  --dark-bg: #0a0e1a;
+  --dark-card: #111827;
+  --dark-surface: #1a1f36;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--dark-bg);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ─── Glass Card ─────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-sm {
+  background: rgba(26, 31, 54, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+}
+
+/* ─── Neon Buttons ───────────────────────────────────────────────── */
+.btn-neon {
+  position: relative;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-neon-blue {
+  background: linear-gradient(135deg, #00d4ff 0%, #0891b2 100%);
+  color: #0a0e1a;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+.btn-neon-blue:hover {
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-neon-green {
+  background: linear-gradient(135deg, #00ff88 0%, #059669 100%);
+  color: #0a0e1a;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+.btn-neon-green:hover {
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-neon-pink {
+  background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
+}
+.btn-neon-pink:hover {
+  box-shadow: 0 6px 25px rgba(244, 63, 94, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-neon-purple {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+.btn-neon-purple:hover {
+  box-shadow: 0 6px 25px rgba(168, 85, 247, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ─── Stat Card ──────────────────────────────────────────────────── */
+.stat-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9) 0%, rgba(26, 31, 54, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* ─── Simulation Canvas ─────────────────────────────────────────── */
+.simulation-canvas {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.05), inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Pulse Dot ──────────────────────────────────────────────────── */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; box-shadow: 0 0 0 0 currentColor; }
+  70% { opacity: 0.7; box-shadow: 0 0 0 8px transparent; }
+  100% { opacity: 1; box-shadow: 0 0 0 0 transparent; }
+}
+
+/* ─── Loading Spinner ────────────────────────────────────────────── */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Grid Background ───────────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
